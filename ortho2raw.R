@@ -18,7 +18,7 @@ ortho2raw <- function(input_model, vars) {
 	# if statement to extract the model coefficients, as averaged models 
 	# have a different summary$coefficients to single models)
 	if (colnames(summary(input_model)$coefficients)[1] == "Estimate") { 
-		model_coefs <- t(summary(ave_model$ave_model)$coefficients)[1,]
+		model_coefs <- t(summary(input_model)$coefficients)[1,]
 	} else {
 		model_coefs <- summary(input_model)$coefficients[1,]
 	}
